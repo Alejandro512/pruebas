@@ -1,7 +1,7 @@
 from jose import jwt, JWTError
 from fastapi import HTTPException, Depends
 from fastapi.security import HTTPBearer, HTTPAuthorizationCredentials
-from core.config import settings
+from app.core.config import settings
 
 security = HTTPBearer()
 

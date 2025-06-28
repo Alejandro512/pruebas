@@ -1,4 +1,4 @@
-from fastapi import FastAPI
+from fastapi import FastAPI, Request
 from app.core.rate_limit import register_rate_limit_handler, limiter
 from app.api import auth, admin, technicians, users
 
@@ -18,5 +18,5 @@ app.include_router(users.router)
 
 @app.get("/")
 @limiter.limit("10/minute")  
-async def root():
+async def root(request: Request):
     return {"message": "API is running 🚀"}

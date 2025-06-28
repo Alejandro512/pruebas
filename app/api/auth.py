@@ -4,8 +4,7 @@ from app.core.jwt import create_access_token
 from app.core.security import verify_password
 from app.crud.administrator import get_administrator_by_email
 from app.schemas.administrator import LoginRequest, TokenResponse
-
-from services.audit import log_action
+from app.services.audit import log_action
 
 router = APIRouter(prefix="/auth", tags=["auth"])
 

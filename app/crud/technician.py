@@ -1,6 +1,6 @@
-from core.database import db
-from models.technician import TechnicianInDB
-from core.security import hash_password
+from app.core.database import db
+from app.models.technician import TechnicianInDB
+from app.core.security import hash_password
 from datetime import datetime
 
 async def create_technician(data: dict) -> TechnicianInDB:

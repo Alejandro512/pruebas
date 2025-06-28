@@ -1,11 +1,11 @@
 from fastapi import APIRouter, Depends, HTTPException, Request, Path
-from schemas.administrator import AdministratorCreate, AdministratorOut
+from app.schemas.administrator import AdministratorCreate, AdministratorOut
 from app.crud.administrator import create_administrator
-from services.audit import log_action
-from core.database import db
+from app.services.audit import log_action
+from app.core.database import db
 from jose import jwt, JWTError
 from fastapi.security import HTTPBearer, HTTPAuthorizationCredentials
-from core.config import settings
+from app.core.config import settings
 
 router = APIRouter(prefix="/admin", tags=["administrators"])
 

@@ -1,4 +1,4 @@
-from core.database import db
+from app.core.database import db
 from datetime import datetime
 
 async def log_action(actor_id, actor_role, action, entity_type, entity_id, details, ip_address, user_agent):

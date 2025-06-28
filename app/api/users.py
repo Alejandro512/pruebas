@@ -1,8 +1,8 @@
 from fastapi import APIRouter, Depends, Request, HTTPException
-from schemas.user import UserCreate, UserOut
-from crud.user import create_user
-from services.audit import log_action
-from core.deps import get_current_admin
+from app.schemas.user import UserCreate, UserOut
+from app.crud.user import create_user
+from app.services.audit import log_action
+from app.core.deps import get_current_admin
 
 router = APIRouter(prefix="/users", tags=["users"])
 

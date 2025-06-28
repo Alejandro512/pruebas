@@ -1,8 +1,8 @@
 from fastapi import APIRouter, Depends, Request, HTTPException
-from schemas.technician import TechnicianCreate, TechnicianOut
-from crud.technician import create_technician
-from services.audit import log_action
-from core.deps import get_current_admin
+from app.schemas.technician import TechnicianCreate, TechnicianOut
+from app.crud.technician import create_technician
+from app.services.audit import log_action
+from app.core.deps import get_current_admin
 
 router = APIRouter(prefix="/technicians", tags=["technicians"])
 

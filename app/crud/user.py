@@ -1,6 +1,6 @@
-from core.database import db
-from models.user import UserInDB
-from core.security import hash_password
+from app.core.database import db
+from app.models.user import UserInDB
+from app.core.security import hash_password
 from datetime import datetime
 
 async def create_user(data: dict) -> UserInDB:

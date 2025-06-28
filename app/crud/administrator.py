@@ -1,5 +1,5 @@
-from models.administrator import AdministratorInDB
-from core.security import hash_password
+from app.models.administrator import AdministratorInDB
+from app.core.security import hash_password
 from app.core.database import db
 from datetime import datetime
 
