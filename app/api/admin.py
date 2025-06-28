@@ -34,7 +34,14 @@ async def create_admin(data: AdministratorCreate, request: Request, superadmin=D
         ip_address=request.client.host,
         user_agent=request.headers.get("User-Agent")
     )
-    return new_admin
+    return AdministratorOut(
+        id=str(new_admin.id),
+        name=new_admin.name,
+        lastname=new_admin.lastname,
+        email=new_admin.email,
+        isSuperAdmin=new_admin.isSuperAdmin,
+        status=new_admin.status
+    )
 
 @router.patch("/{id}/status")
 async def update_admin_status(

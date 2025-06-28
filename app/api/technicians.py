@@ -19,4 +19,11 @@ async def create_tech(data: TechnicianCreate, request: Request, admin=Depends(ge
         ip_address=request.client.host,
         user_agent=request.headers.get("User-Agent")
     )
-    return new_tech
+    return TechnicianOut(
+        id=str(new_tech.id),
+        name=new_tech.name,
+        lastname=new_tech.lastname,
+        email=new_tech.email,
+        phone=new_tech.phone,
+        status=new_tech.status
+    )

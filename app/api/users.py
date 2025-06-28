@@ -19,4 +19,11 @@ async def create_user_endpoint(data: UserCreate, request: Request, admin=Depends
         ip_address=request.client.host,
         user_agent=request.headers.get("User-Agent")
     )
-    return new_user
+    return UserOut(
+        id=str(new_user.id),
+        name=new_user.name,
+        lastname=new_user.lastname,
+        email=new_user.email,
+        company=new_user.company,
+        status=new_user.status
+    )
